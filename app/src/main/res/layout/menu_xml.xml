@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView_choice"
+        android:text="Choose side"
+        android:layout_centerHorizontal="true"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#111111"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear_layout_1"
+        android:layout_below="@id/textView_choice"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_choice_x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="X"
+            android:textStyle="bold"
+            android:textSize="32sp"
+            android:layout_margin="15dp"/>
+
+        <Button
+            android:id="@+id/button_choice_o"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="O"
+            android:textStyle="bold"
+            android:textSize="32sp"
+            android:layout_margin="15dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Difficulty"
+        android:id="@+id/textView_difficulty_level"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:textColor="#111111"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:layout_below="@id/linear_layout_1"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linear_layout_2"
+        android:layout_below="@id/textView_difficulty_level">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_difficult_level_easy"
+            android:layout_margin="20dp"
+            android:text="easy"
+            android:layout_weight="1"
+            android:layout_marginBottom="0dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_difficult_level_hard"
+            android:text="Hard"
+            android:layout_margin="20dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:layout_below="@id/linear_layout_2"
+        android:layout_centerHorizontal="true"
+        />
+
+</RelativeLayout>
