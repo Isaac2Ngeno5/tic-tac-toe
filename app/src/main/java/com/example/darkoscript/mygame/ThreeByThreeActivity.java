@@ -1,8 +1,10 @@
 package com.example.darkoscript.mygame;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 public class ThreeByThreeActivity extends AppCompatActivity {
@@ -35,6 +38,7 @@ public class ThreeByThreeActivity extends AppCompatActivity {
     String choice;
     String computerChoice;
     int moves = 0;
+    String message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -154,6 +158,8 @@ public class ThreeByThreeActivity extends AppCompatActivity {
         if (playerChoice.equals("x")) {
             playerXSelections.add(buttonID);
             if (isWin(playerXSelections)) {
+                message = "X wins!";
+                showResults(message);
                 Toast.makeText(ThreeByThreeActivity.this, "X wins!", Toast.LENGTH_LONG).show();
                 setUpGame();
             } else {
@@ -165,6 +171,8 @@ public class ThreeByThreeActivity extends AppCompatActivity {
             playerOSelections.add(buttonID);
             if (isWin(playerOSelections)) {
                 Toast.makeText(ThreeByThreeActivity.this, "O wins!", Toast.LENGTH_LONG).show();
+                message = "O wins!";
+                showResults(message);
                 setUpGame();
             } else {
                 if (isSinglePlayer)
@@ -175,6 +183,8 @@ public class ThreeByThreeActivity extends AppCompatActivity {
 
         if (++moves == 8) {
             Toast.makeText(ThreeByThreeActivity.this, "Draw", Toast.LENGTH_LONG).show();
+            message = "Draw";
+            showResults(message);
             setUpGame();
         }
     }
@@ -210,5 +220,33 @@ public class ThreeByThreeActivity extends AppCompatActivity {
                 return true;
 
         return false;
+    }
+
+
+    private void showResults(String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(ThreeByThreeActivity.this);
+
+        builder.setCancelable(false)
+                .setMessage(String.format(Locale.ENGLISH, "Congratulations! ."+message))
+                .setTitle("You're Done!")
+                .setIcon(R.mipmap.ic_launcher);
+
+        builder.setNegativeButton("Restart", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+
+                dialog.cancel();
+            }
+        });
+
+        builder.setPositiveButton("Menu", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                Intent intent_menu = new Intent(ThreeByThreeActivity.this, MainActivity.class);
+                startActivity(intent_menu);
+                ActivityCompat.finishAffinity(ThreeByThreeActivity.this);
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
