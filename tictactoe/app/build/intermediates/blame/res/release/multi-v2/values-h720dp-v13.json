@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/darkoscript/AndroidStudioProjects/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+            "map": [
+                {
+                    "source": "/home/darkoscript/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/4ff2832e38cc648fbe7f4936178862c3/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "66",
+                        "endOffsets": "117"
+                    }
+                }
+            ]
+        }
+    ]
+}
