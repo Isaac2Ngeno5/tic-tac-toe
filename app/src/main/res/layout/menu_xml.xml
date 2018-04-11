@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
 
 
     <TextView
@@ -12,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="#111111"
+        android:textColor="#ffffff"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"/>
 
@@ -27,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="X"
+            android:textColor="#ffffff"
             android:textStyle="bold"
             android:textSize="32sp"
             android:padding="15dp"/>
@@ -35,8 +37,8 @@
             android:id="@+id/button_choice_o"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="O"
+            android:textColor="#ffffff"
             android:textStyle="bold"
             android:textSize="32sp"
             android:padding="15dp"
@@ -51,7 +53,7 @@
         android:id="@+id/textView_difficulty_level"
         android:textSize="20sp"
         android:padding="10dp"
-        android:textColor="#111111"
+        android:textColor="#ffffff"
         android:textAlignment="center"
         android:textStyle="bold"
         android:layout_below="@id/radio_group_1"
@@ -69,6 +71,7 @@
             android:id="@+id/button_difficult_level_easy"
             android:layout_margin="20dp"
             android:text="easy"
+            android:textColor="#ffffff"
             android:layout_marginBottom="0dp"/>
 
         <RadioButton
@@ -76,6 +79,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/button_difficult_level_hard"
             android:text="Hard"
+            android:textColor="#ffffff"
             android:layout_margin="20dp" />
 
     </RadioGroup>
@@ -85,6 +89,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/button_start"
         android:text="Start"
+        android:background="@color/colorPrimary"
+        android:textColor="#ffffff"
         android:layout_below="@id/radio_group_2"
         android:layout_centerHorizontal="true"
         />
